@@ -16,3 +16,4 @@
 </p>
 
 <a href="{{ route('programs.edit', $program->id) }}">Edit</a>
+<a href="{{ route('programs.courses.index', $program->id) }}">Courses</a>

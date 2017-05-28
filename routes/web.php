@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::resource('faculties', 'FacultyController', ['except' => ['destroy']]);
 Route::resource('programs', 'ProgramController', ['except' => ['destroy']]);
+Route::resource('courses', 'CourseController', ['except' => ['destroy']]);
+Route::resource('programs.courses', 'ProgramCourseController', ['except' => ['show', 'edit', 'update']]);
