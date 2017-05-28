@@ -3,7 +3,7 @@
 
 <ul>
 @foreach($faculties as $fac)
-<li>{{ $fac->name }}</li>
+<li><a href="{{ route('faculties.show', $fac->id) }}">{{ $fac->name }}</a></li>
 
 @endforeach
 

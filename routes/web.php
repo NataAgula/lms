@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('faculties', 'FacultyController');
+Route::resource('faculties', 'FacultyController', ['except' => ['destroy']]);
+Route::resource('programs', 'ProgramController', ['except' => ['destroy']]);
