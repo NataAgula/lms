@@ -36,4 +36,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectPath()
+    {
+        //            if(Auth::guard()->user()->userType == 'Admin') (
+        //                $this->redirectTo='sadfsadfsda'
+        //            ) else (
+        //            return parent::redirectPath();
+        //            )
+    }
 }

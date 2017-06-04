@@ -9,7 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
    
-
+    public function isAdmin()
+        {
+            return $this->userType; // this looks for an admin column in your users table
+        }
     /**
      * The attributes that are mass assignable.
      *

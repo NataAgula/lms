@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('faculties', 'FacultyController', ['except' => ['destroy']]);
-Route::resource('programs', 'ProgramController', ['except' => ['destroy']]);
-Route::resource('courses', 'CourseController', ['except' => ['destroy']]);
-Route::resource('users', 'UserController', ['except' => ['destroy']]);
-Route::resource('programs.courses', 'ProgramCourseController', ['except' => ['show', 'edit', 'update']]);
+Route::group(['middleware' =>  ['auth', 'is_admin']], function() {
+	Route::resource('faculties', 'FacultyController', ['except' => ['destroy']]);
+	Route::resource('programs', 'ProgramController', ['except' => ['destroy']]);
+	Route::resource('courses', 'CourseController', ['except' => ['destroy']]);
+	Route::resource('users', 'UserController', ['except' => ['destroy']]);
+	Route::resource('programs.courses', 'ProgramCourseController', ['except' => ['show', 'edit', 'update']]);
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
