@@ -25,4 +25,10 @@ class Course extends Model
     	return $this->hasMany('App\Models\ProgramCourse');
     }
 
+    public function groups() {
+
+        return $this->hasMany('App\Models\Group');
+    }
+
+
 }

@@ -23,7 +23,8 @@ Route::group(['middleware' =>  ['auth', 'is_admin']], function() {
 	Route::resource('programs.courses', 'ProgramCourseController', ['except' => ['show', 'edit', 'update']]);
 });
 
-
+Route::resource('buildings', 'BuildingController', ['except' => ['destroy']]);
+Route::resource('rooms', 'RoomController', ['except' => ['destroy']]);
 
 Auth::routes();
 
